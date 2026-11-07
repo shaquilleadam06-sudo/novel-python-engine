@@ -1,0 +1,266 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0c1020;
+    color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #10162b;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #a78bfa;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #a78bfa;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.subtitle {
+    color: #a78bfa;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #a78bfa;
+}
+
+.hero-content > p:not(.subtitle) {
+    color: #b8bfd3;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.hero-image img {
+    width: 390px;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #7c3aed;
+}
+
+.section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section h2,
+.about h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    color: #b8bfd3;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: #171e35;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.service-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-card h3 {
+    margin: 18px 0 10px;
+}
+
+.service-card p {
+    color: #b8bfd3;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.service-card h4 {
+    color: #a78bfa;
+    margin: 18px 0;
+}
+
+.about {
+    padding: 90px 12%;
+    background: #151b31;
+    text-align: center;
+}
+
+.about p:last-child {
+    color: #b8bfd3;
+    line-height: 1.9;
+    max-width: 750px;
+    margin: 20px auto 0;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    background: #171e35;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.contact label {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 14px;
+}
+
+.contact input,
+.contact select,
+.contact textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #343d59;
+    border-radius: 7px;
+    background: #0c1020;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+.contact input:focus,
+.contact select:focus,
+.contact textarea:focus {
+    border-color: #a78bfa;
+}
+
+.contact button {
+    margin-top: 22px;
+    width: 100%;
+}
+
+.message {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.message.success {
+    background: #164e36;
+    color: #bbf7d0;
+}
+
+.message.error {
+    background: #7f1d1d;
+    color: #fecaca;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #080b16;
+    color: #b8bfd3;
+    line-height: 2;
+}
+
+footer h3 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+}
