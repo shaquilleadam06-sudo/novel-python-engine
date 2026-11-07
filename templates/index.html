@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Python Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">NOVEL<span>PYTHON</span></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Pesan</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="subtitle">YOUR STORY, OUR CREATION</p>
+        <h1>Every Story Has a <span>Beginning.</span></h1>
+        <p>
+            Temukan novel digital pilihan atau wujudkan cerita
+            impianmu bersama Novel Python Engine.
+        </p>
+        <a href="#layanan" class="btn">Jelajahi Layanan</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=700"
+             alt="Koleksi buku dan novel">
+    </div>
+</section>
+
+<section class="section" id="layanan">
+    <p class="subtitle">WHAT WE OFFER</p>
+    <h2>Layanan Kami</h2>
+    <p class="section-desc">Pilih layanan sesuai kebutuhan ceritamu.</p>
+
+    <div class="service-container">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500" alt="Novel digital">
+            <h3>Digital Novel</h3>
+            <p>Jelajahi berbagai cerita menarik dalam format digital.</p>
+            <h4>Mulai Rp25.000</h4>
+            <a href="#kontak" class="btn">Pesan Sekarang</a>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500" alt="Penulisan cerita">
+            <h3>Custom Writing</h3>
+            <p>Pesan cerita khusus sesuai ide dan keinginanmu.</p>
+            <h4>Mulai Rp50.000</h4>
+            <a href="#kontak" class="btn">Pesan Sekarang</a>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=500" alt="Editing tulisan">
+            <h3>Novel Editing</h3>
+            <p>Bantu perbaiki tulisan, tata bahasa, dan alur cerita.</p>
+            <h4>Mulai Rp30.000</h4>
+            <a href="#kontak" class="btn">Pesan Sekarang</a>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="tentang">
+    <div>
+        <p class="subtitle">ABOUT US</p>
+        <h2>We Turn Ideas Into Stories</h2>
+        <p>
+            Novel Python Engine adalah platform layanan novel digital
+            dan penulisan kreatif. Kami membantu pembaca menemukan
+            cerita serta membantu penulis mengembangkan ide menjadi karya.
+        </p>
+    </div>
+</section>
+
+<section class="section contact" id="kontak">
+    <p class="subtitle">GET STARTED</p>
+    <h2>Pesan Layanan</h2>
+    <p class="section-desc">Isi formulir berikut untuk mengirimkan pesananmu.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            <p class="message {{ category }}">{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form action="/pesan" method="POST">
+        <label>Nama Lengkap</label>
+        <input type="text" name="nama" placeholder="Masukkan nama kamu" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Masukkan email kamu" required>
+
+        <label>Nomor WhatsApp</label>
+        <input type="text" name="whatsapp" placeholder="Masukkan nomor WhatsApp">
+
+        <label>Pilih Layanan</label>
+        <select name="jenis_layanan" required>
+            <option value="">-- Pilih layanan --</option>
+            <option value="Digital Novel">Digital Novel</option>
+            <option value="Custom Writing">Custom Writing</option>
+            <option value="Novel Editing">Novel Editing</option>
+        </select>
+
+        <label>Judul Novel (jika ada)</label>
+        <input type="text" name="judul_novel" placeholder="Masukkan judul novel">
+
+        <label>Detail Pesanan</label>
+        <textarea name="detail_pesanan" rows="5"
+                  placeholder="Tuliskan detail pesanan kamu..."></textarea>
+
+        <button type="submit" class="btn">Kirim Pesanan</button>
+    </form>
+</section>
+
+<footer>
+    <h3>NOVEL PYTHON ENGINE</h3>
+    <p>Every story deserves to be told.</p>
+    <p>© 2026 Novel Python Engine. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
